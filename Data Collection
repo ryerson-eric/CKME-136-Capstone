@@ -1,0 +1,20 @@
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(ggthemes)
+library(caret)
+library(data.table)
+library(reader)
+library(datasets)
+
+
+# import data
+calendar <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/calendar.csv",header = T,sep = ',')
+saledata <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/sales_train_v2.csv",header = T,sep = ',')
+shops <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/shops-translated.csv",header = T,sep = ',')
+items <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/items-translated.csv",header = T,sep = ',')
+item.categories <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/item_categories-translated.csv",header = T,sep = ',')
+item.categories1 <- read.csv("C:/Users/Eric/Desktop/capstone/data.sales/item_categories.csv",header = T,sep = ',')
+items1 <-read.csv("C:/Users/Eric/Desktop/capstone/data.sales/items.csv",header = T,sep = ',')
+
