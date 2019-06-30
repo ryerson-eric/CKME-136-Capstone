@@ -1,0 +1,34 @@
+#translated data missed item_id. add item_id from russian
+items2 <-merge(items,items1, by ="item_id")
+
+items2$item_name <- NULL
+
+head(items2)
+
+#merged master data and shops data
+salesdata1<-merge(saledata, shops, by = "shop_id")
+head(salesdata1)
+
+#merged master data and items data 
+salesdata2<-merge(salesdata1,items2, by="item_id")
+head(salesdata2)
+
+
+#merged masterdata and item.category data
+salesdatafinal <- merge(salesdata2,item.categories, by ="item_category_id")
+head(salesdatafinal)
+
+#changed column names 
+colnames(salesdatafinal)[8]<-"shop_name"
+colnames(salesdatafinal)[9]<-"item_name"
+colnames(salesdatafinal)[10]<-"item_category_name"
+
+#add columns each date, year, month and day
+salesdatafinal$date<-dmy(salesdatafinal$date)
+salesdatafinal$year<-year(salesdatafinal$date)
+salesdatafinal$month<-month(salesdatafinal$date)
+salesdatafinal$day<-day(salesdatafinal$date)
+
+#checking any n/a or missing values in dataset 
+colSums(is.na(salesdatafinal))
+colSums(salesdatafinal=='')
