@@ -45,13 +45,17 @@ Write details of the step 1. If there is any source code that you’d like to sh
 •	Downloading the dataset
 •	Importing the data into R and python 
 •	Importing data set into R
+https://github.com/ryerson-eric/CKME-136-Capstone/blob/master/Data%20Collection
 
 Step 2: <Data Cleaning>
+
 •	Checking data sets
 •	Merging dataset to one data frame
 •	Testing if dataset contains N/A values. 
 •	Checking any duplicated data 
 •	Checking mean and median and verifying any outlier data
+https://github.com/ryerson-eric/CKME-136-Capstone/blob/master/Data%20Cleaning
+
 Step 3: <Data Exploration>
 
 •	Merging dataset to one data frame
@@ -59,4 +63,7 @@ Step 3: <Data Exploration>
 •	Checking data with few questions
 •	What is most popular item?
 •	Which shop is most selling item?
-•	What are total sales per each months or years? 
+•	What are total sales per each months or years?
+https://github.com/ryerson-eric/CKME-136-Capstone/blob/master/Data%20Exploration
+
+
