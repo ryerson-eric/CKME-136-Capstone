@@ -1,0 +1,35 @@
+#grouped by numeric datas for checking relationships  
+monthlysales<-salesdatafinal %>%
+  group_by(date_block_num, shop_id,item_id,item_category_id,item_price) %>%
+  summarise(month_sale=sum(item_cnt_day))
+
+summary(monthlysales)
+
+cor(monthlysales)
+
+library(corrplot)
+
+#checked relationships shops, items and monthly sales
+# monthly sales are not dirrectly related with shop and items. 
+plot <- cor(monthlysales)
+corrplot(plot,type = "full")
+
+#most selling item_category
+salesdatafinal%>%
+  group_by(item_category_name) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+
+#most selling shop name 
+
+salesdatafinal %>%
+  group_by(shop_name) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+#most selling items. 
+salesdatafinal %>%
+  group_by(item_name) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
